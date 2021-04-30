@@ -19,8 +19,6 @@ We recommend that you use the folder when you need persistent data such as a cac
 
 ## C++ 
 
-![](https://i.imgur.com/f1a0cx1.png)
-
 `JSON *jm = new JSON();`<br/>
 `jm->setString("MyObject.Child.Child2.property", "example");`<br/>
 `cout << jm.ToString());`<br/>
