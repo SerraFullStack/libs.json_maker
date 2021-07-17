@@ -433,6 +433,20 @@ namespace JsonMaker{
         if (this->root != NULL)
         {
             this->root->clear();
+        }
+
+        if (modelObject != NULL)
+        {
+            modelObject->clear();
+        }
+
+    }
+
+    void JSON::clearAndFree()
+    {
+        if (this->root != NULL)
+        {
+            this->root->clear();
             delete this->root;
             this->root = NULL;
         }
@@ -476,7 +490,7 @@ namespace JsonMaker{
 
 	JSON::~JSON()
 	{
-        this->clear();
+        this->clearAndFree();
 	}
 
     IJSONObject *JSON::find(string objectName, bool autoCreateTree, IJSONObject *currentParent, SOType forceType)
@@ -1410,7 +1424,7 @@ namespace JsonMaker{
 
     void JSON::Dispose()
     {
-        this->clear();
+        this->clearAndFree();
     }
 
 }

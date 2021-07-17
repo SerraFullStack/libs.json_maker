@@ -287,7 +287,12 @@ namespace JsonMaker{
             /// <returns></returns>
             int getArrayLength(string objectName = "");
 
-            void clear();
+            //clear the object ot be reused
+			void clear();
+            
+            //object will no able to be reused
+            void clearAndFree();
+
             void Dispose();
     };
 
