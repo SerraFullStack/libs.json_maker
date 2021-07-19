@@ -1269,7 +1269,8 @@ namespace JsonMaker{
         if ((result.size() > 0) && (result[result.size() - 1] == '"'))
             result = result.substr(0, result.size() - 1);
 
-		result = __unescapeString(result);
+        if (result.size() > 0)
+		    result = __unescapeString(result);
 
         if ((result != "") && (result != "undefined"))
             return result;
